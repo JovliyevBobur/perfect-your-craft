@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["var(--font-display)", "serif"],
-        body: ["var(--font-body)", "sans-serif"],
+        display: ["var(--font-display)", "monospace"],
+        body: ["var(--font-body)", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,6 +51,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        neon: {
+          DEFAULT: "hsl(var(--neon-green))",
+          green: "hsl(120 100% 50%)",
+          dark: "hsl(120 50% 5%)",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -84,12 +89,22 @@ export default {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.5" },
         },
+        glitch: {
+          "0%, 100%": { transform: "translate(0)" },
+          "33%": { transform: "translate(-2px, 2px)" },
+          "66%": { transform: "translate(2px, -2px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         float: "float 3s ease-in-out infinite",
         pulse: "pulse 2s ease-in-out infinite",
+        glitch: "glitch 0.3s ease-in-out infinite",
+      },
+      boxShadow: {
+        neon: "0 0 20px hsl(120 100% 50% / 0.8), 0 0 40px hsl(120 100% 50% / 0.4), 0 0 60px hsl(120 100% 50% / 0.2)",
+        "neon-strong": "0 0 10px hsl(120 100% 50%), 0 0 30px hsl(120 100% 50% / 0.8), 0 0 60px hsl(120 100% 50% / 0.5), 0 0 100px hsl(120 100% 50% / 0.3)",
       },
     },
   },
